@@ -1,7 +1,6 @@
 # Course project 1, plot 2
 
 # Read the header row 
-setwd("~/Projects/ExData_Plotting1/")
 headers <- read.table("./household_power_consumption.txt", sep=";", stringsAsFactors=FALSE, nrows=1)
 headers <- as.character(headers[1,])
 
