@@ -1,6 +1,7 @@
 # Course project 1, plot 2
 
 # Read the header row 
+setwd("~/Projects/ExData_Plotting1/")
 headers <- read.table("./household_power_consumption.txt", sep=";", stringsAsFactors=FALSE, nrows=1)
 headers <- as.character(headers[1,])
 
@@ -12,8 +13,8 @@ data <- read.table("./household_power_consumption.txt", sep=";", col.names=heade
 data$DateParsed <- strptime(data$Date, format="%d/%m/%Y")
 data$WeekDay <- weekdays(data$DateParsed)
 
-plot(data$Global_active_power, type="l", xaxt=FALSE)
-axis(side=1, at=c(0,1440, 2880), labels=c("Thursday", "Friday", "Saturday"))
+plot(data$Global_active_power, type="l", xlab="", ylab="Global Active Power (kilowatts)", xaxt="n")
+axis(side=1, at=c(1,1441, 2881), labels=c("Thursday", "Friday", "Saturday"))
 #hist(data$Global_active_power, col = "Red", main = "Global Active Power", xlab="Global Active Power (kilowatts)")
 
 dev.copy(png, file = "plot2.png") 
