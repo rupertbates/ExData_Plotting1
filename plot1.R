@@ -11,7 +11,8 @@ data <- read.table("./household_power_consumption.txt", sep=";", col.names=heade
 # Convert the dates to POSIXlt
 data$DateParsed <- strptime(data$Date, format="%d/%m/%Y")
 
+png("plot1.png", width=500, height=500)
+
 hist(data$Global_active_power, col = "Red", main = "Global Active Power", xlab="Global Active Power (kilowatts)")
 
-dev.copy(png, file = "plot1.png") 
 dev.off()

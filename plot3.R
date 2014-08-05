@@ -1,4 +1,4 @@
-# Course project 1, plot 2
+# Course project 1, plot 3
 
 # Read the header row 
 headers <- read.table("./household_power_consumption.txt", sep=";", stringsAsFactors=FALSE, nrows=1)
@@ -12,9 +12,12 @@ data <- read.table("./household_power_consumption.txt", sep=";", col.names=heade
 data$DateParsed <- strptime(data$Date, format="%d/%m/%Y")
 data$WeekDay <- weekdays(data$DateParsed)
 
-png("plot2.png", width=500, height=500)
+png("plot3.png", width=500, height=500)
 
-plot(data$Global_active_power, type="l", xlab="", ylab="Global Active Power (kilowatts)", xaxt="n")
+plot(data$Sub_metering_1, type="l", xlab="", ylab="Energy sub metering", xaxt="n")
+lines(data$Sub_metering_2, col="Red")
+lines(data$Sub_metering_3, col="Blue")
 axis(side=1, at=c(1,1441, 2881), labels=c("Thu", "Fri", "Sat"))
+legend(x="topright", legend=grep("Sub_", names(data), value=TRUE), lwd=c(2.5, 2.5), col=c("Black", "Red", "Blue"))
 
 dev.off()
