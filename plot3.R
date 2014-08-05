@@ -12,7 +12,7 @@ data <- read.table("./household_power_consumption.txt", sep=";", col.names=heade
 data$DateParsed <- strptime(data$Date, format="%d/%m/%Y")
 data$WeekDay <- weekdays(data$DateParsed)
 
-png("plot3.png", width=500, height=500)
+png("plot3.png", width=480, height=480)
 
 plot(data$Sub_metering_1, type="l", xlab="", ylab="Energy sub metering", xaxt="n")
 lines(data$Sub_metering_2, col="Red")

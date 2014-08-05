@@ -12,7 +12,7 @@ data <- read.table("./household_power_consumption.txt", sep=";", col.names=heade
 data$DateParsed <- strptime(data$Date, format="%d/%m/%Y")
 data$WeekDay <- weekdays(data$DateParsed)
 
-png("plot2.png", width=500, height=500)
+png("plot2.png", width=480, height=480)
 
 plot(data$Global_active_power, type="l", xlab="", ylab="Global Active Power (kilowatts)", xaxt="n")
 axis(side=1, at=c(1,1441, 2881), labels=c("Thu", "Fri", "Sat"))

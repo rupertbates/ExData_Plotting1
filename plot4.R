@@ -12,7 +12,7 @@ data <- read.table("./household_power_consumption.txt", sep=";", col.names=heade
 data$DateParsed <- strptime(data$Date, format="%d/%m/%Y")
 
 
-png("plot4.png", width=500, height=500)
+png("plot4.png", width=480, height=480)
 par(mfrow = c(2, 2))
 
 plot(data$Global_active_power, type="l", xlab="", ylab="Global Active Power", xaxt="n")
